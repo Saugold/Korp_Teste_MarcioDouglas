@@ -1,0 +1,22 @@
+<main>
+  <div style="text-align: center; margin-top: 50px;">
+    <h1>Bem-vindo ao Sistema de Emissão de Notas Fiscais</h1>
+    <p>Teste prático estágio KORP</p>
+
+    <div style="margin-top:20px; display:flex; gap:12px; justify-content:center;">
+      <button
+        style="padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;"
+        routerLink="/produtos">
+        Ir para Cadastro de Produtos
+      </button>
+
+      <button
+        style="padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;"
+        routerLink="/notas-fiscais">
+        Ir para Cadastro de Notas Fiscais
+      </button>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</main>

@@ -1,0 +1,70 @@
+<p>notas-fiscais works!</p>
+<div class="container">
+    <h2>Cadastro de Notas Fiscais</h2>
+
+    <!-- Formulário de Cadastro -->
+    <form (ngSubmit)="adicionarNotaFiscal()" #notaFiscalForm="ngForm">
+        <div>
+            <label for="numero">Número:</label>
+            <input type="number" id="numero" name="numero" [(ngModel)]="novaNotaFiscal.numero" required>
+        </div>
+
+        <div>
+            <label for="status">Status:</label>
+            <select id="status" name="status" [(ngModel)]="novaNotaFiscal.status" required>
+                <option value="Aberta">Aberta</option>
+                <option value="Fechada">Fechada</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="produtos">Produtos:</label>
+            <div *ngFor="let produto of produtosDisponiveis" class="produto-row">
+                <input type="checkbox" [value]="produto" (change)="selecionarProduto($event, produto)">
+                <span class="produto-label">{{ produto.nome }} (Estoque: {{ produto.quantidade }})</span>
+                <input class="qtd-input" type="number" [(ngModel)]="produto.quantidadeSelecionada"
+                    name="quantidade-{{ produto.codigo }}" placeholder="Quantidade">
+                <span class="qtd-error"
+                    *ngIf="produto.quantidadeSelecionada !== undefined && produto.quantidadeSelecionada <= 0">Min
+                    1</span>
+                <span class="qtd-error"
+                    *ngIf="produto.quantidadeSelecionada !== undefined && produto.quantidadeSelecionada > produto.quantidade">Excede
+                    estoque</span>
+            </div>
+            <div class="form-note" *ngIf="novaNotaFiscal.produtos.length === 0">Selecione pelo menos um produto.</div>
+        </div>
+
+        <button type="submit" [disabled]="!isNotaValida() || notaFiscalForm.invalid || creating">
+            <span *ngIf="!creating">Adicionar Nota Fiscal</span>
+            <span *ngIf="creating">Criando...</span>
+        </button>
+    </form>
+
+    <h3>Notas Fiscais Cadastradas</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Status</th>
+                <th>Produtos</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let nota of notasFiscais">
+                <td>{{ nota.numero }}</td>
+                <td>{{ nota.status }}</td>
+                <td>
+                    <ul>
+                        <li *ngFor="let produto of nota.produtos">
+                            {{ produto.nome }} - {{ produto.quantidade }} unidades
+                        </li>
+                    </ul>
+                </td>
+                <td>
+                    <button (click)="imprimirNotaFiscal(nota)" [disabled]="nota.status !== 'Aberta'">Imprimir</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
