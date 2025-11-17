@@ -1,0 +1,139 @@
+[
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.NotaFiscalController",
+    "Method": "Create",
+    "RelativePath": "api/NotaFiscal",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EmissaoNFAPI.DTOs.NotaFiscal.NotaFiscalCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.NotaFiscalController",
+    "Method": "GetByNumero",
+    "RelativePath": "api/NotaFiscal/{numero}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numero",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.NotaFiscalController",
+    "Method": "Close",
+    "RelativePath": "api/NotaFiscal/{numero}/fechar",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "numero",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.NotaFiscalController",
+    "Method": "GetAll",
+    "RelativePath": "api/NotaFiscal/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.ProdutoController",
+    "Method": "GetAll",
+    "RelativePath": "Api/Produto",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.ProdutoController",
+    "Method": "Create",
+    "RelativePath": "Api/Produto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "EmissaoNFAPI.DTOs.Produto.ProdutoCreateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.ProdutoController",
+    "Method": "GetById",
+    "RelativePath": "Api/Produto/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.ProdutoController",
+    "Method": "Update",
+    "RelativePath": "Api/Produto/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "produto",
+        "Type": "EmissaoNFAPI.Models.Produto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "EmissaoNFAPI.Controllers.ProdutoController",
+    "Method": "Delete",
+    "RelativePath": "Api/Produto/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

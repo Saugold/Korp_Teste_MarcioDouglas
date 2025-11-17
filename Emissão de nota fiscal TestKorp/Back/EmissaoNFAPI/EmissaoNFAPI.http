@@ -1,0 +1,6 @@
+@EmissaoNFAPI_HostAddress = http://localhost:5110
+
+GET {{EmissaoNFAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
